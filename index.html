@@ -8,24 +8,24 @@
 <link rel="icon" href="images/ksr-logo.jpg">
 <style>
 :root{--blue:#073b78;--blue2:#0b63b6;--green:#08a95b;--dark:#062b55;--light:#f4f9fc;--text:#17324d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.5}
-a{text-decoration:none;color:inherit}.container{width:min(1180px,92%);margin:auto}
+*{box-sizing:border-box}html{scroll-behavior:smooth;width:100%;max-width:100%;overflow-x:hidden}body{margin:0;width:100%;max-width:100%;overflow-x:hidden;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}.container{width:min(1180px,calc(100% - 32px));margin-left:auto;margin-right:auto;max-width:100%}
 header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e5edf4;box-shadow:0 2px 12px #082d5510}
-.nav{min-height:76px;display:flex;align-items:center;gap:22px}.logo{width:145px;height:auto}.links{display:flex;gap:18px;align-items:center;flex:1;justify-content:center}.links a{font-size:14px;font-weight:700;color:var(--dark)}.links a:hover{color:var(--green)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:8px;font-weight:800;border:2px solid transparent;cursor:pointer}.btn-green{background:var(--green);color:#fff}.btn-outline{border-color:var(--blue);color:var(--blue);background:#fff}.phone{font-weight:800;color:var(--blue);font-size:13px;white-space:nowrap}
-.hero{background:linear-gradient(90deg,#f7fcff 0%,#edf8ff 52%,#d9efff 100%);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr 1fr;min-height:570px;align-items:center;gap:25px}.eyebrow{font-weight:800;letter-spacing:2px;color:var(--green);font-size:13px}.hero h1{font-size:54px;line-height:1.03;margin:12px 0;color:var(--blue)}.hero h1 span{color:var(--green)}.hero p{font-size:20px;max-width:570px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.hero-photo{height:490px;background:url('images/project-2.jpg') center/cover;border-radius:24px;box-shadow:0 20px 50px #0b3d651f}
+.nav{min-height:76px;display:flex;align-items:center;gap:18px;min-width:0}.mobile-menu{display:none}.logo{width:145px;height:auto}.links{display:flex;gap:18px;align-items:center;flex:1;justify-content:center}.links a{font-size:14px;font-weight:700;color:var(--dark)}.links a:hover{color:var(--green)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:8px;font-weight:800;border:2px solid transparent;cursor:pointer}.btn-green{background:var(--green);color:#fff}.btn-outline{border-color:var(--blue);color:var(--blue);background:#fff}.phone{font-weight:800;color:var(--blue);font-size:13px;white-space:nowrap}
+.hero{background:linear-gradient(90deg,#f7fcff 0%,#edf8ff 52%,#d9efff 100%);overflow:hidden}.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:570px;align-items:center;gap:25px}.hero-grid>div{min-width:0}.eyebrow{font-weight:800;letter-spacing:2px;color:var(--green);font-size:13px}.hero h1{font-size:54px;line-height:1.03;margin:12px 0;color:var(--blue)}.hero h1 span{color:var(--green)}.hero p{font-size:20px;max-width:570px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.hero-photo{height:490px;background:url('images/project-2.jpg') center/cover;border-radius:24px;box-shadow:0 20px 50px #0b3d651f}
 .features{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px}.feature{font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}.dot{width:26px;height:26px;border-radius:50%;background:#dff7eb;color:var(--green);display:grid;place-items:center}
 section{padding:68px 0}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:36px;color:var(--blue);margin:0 0 8px}.section-title p{margin:0;color:#557086}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{border:1px solid #dce8f2;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 5px 18px #123d5d0c}.card img{width:100%;height:155px;object-fit:cover}.card-body{padding:18px}.card h3{margin:0 0 8px;color:var(--blue);font-size:18px}.card a{color:var(--blue2);font-weight:800;font-size:13px}
-.dual{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{border-radius:14px;padding:32px;background:#f1faef;border:1px solid #d8eed8}.panel.finance{background:#eef7ff;border-color:#d9eaf8}.panel h2{color:var(--blue);margin:0 0 8px;font-size:30px}.subsidy-big{font-size:36px;font-weight:900;color:var(--green);margin:8px 0 14px}.ticks{padding:0;margin:0;list-style:none}.ticks li{margin:10px 0;font-weight:600}.ticks li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}.banks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.bank{background:#fff;border:1px solid #d8e6f0;border-radius:10px;padding:16px 8px;text-align:center;font-weight:900;color:var(--blue);min-height:76px;display:grid;place-items:center}.bank small{display:block;color:#5b7288;font-weight:600;font-size:10px}
-.estimate{background:linear-gradient(100deg,#062d59,#0b62a8);color:#fff}.estimate-grid{display:grid;grid-template-columns: .85fr 1.15fr;gap:38px;align-items:center}.estimate h2{font-size:42px;line-height:1.05;margin:0 0 15px}.estimate p{font-size:17px}.estimate-card{background:#fff;color:var(--text);padding:24px;border-radius:14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px}.field input,.field select{width:100%;padding:12px;border:1px solid #cbd9e5;border-radius:7px;font:inherit}.full{grid-column:1/-1}.radio-row{display:flex;gap:15px;flex-wrap:wrap}.radio-row label{font-size:13px;font-weight:700}.estimate-note{font-size:12px;color:#6b7d8b;text-align:center;margin:10px 0 0}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{border-radius:14px;padding:32px;background:#f1faef;border:1px solid #d8eed8}.panel.finance{background:#eef7ff;border-color:#d9eaf8}.panel h2{color:var(--blue);margin:0 0 8px;font-size:30px}.subsidy-big{font-size:36px;font-weight:900;color:var(--green);margin:8px 0 14px}.ticks{padding:0;margin:0;list-style:none}.ticks li{margin:10px 0;font-weight:600}.ticks li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}.banks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.bank{background:#fff;border:1px solid #d8e6f0;border-radius:10px;padding:12px 8px;text-align:center;font-weight:900;color:var(--blue);min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px}.bank img{max-width:92px;max-height:38px;width:auto;height:auto;object-fit:contain}.bank small{display:block;color:#5b7288;font-weight:600;font-size:10px;line-height:1.25}
+.estimate{background:linear-gradient(100deg,#062d59,#0b62a8);color:#fff}.estimate-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:38px;align-items:center}.estimate-grid>div{min-width:0}.estimate h2{font-size:42px;line-height:1.05;margin:0 0 15px}.estimate p{font-size:17px}.estimate-card{background:#fff;color:var(--text);padding:24px;border-radius:14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px}.field input,.field select{width:100%;padding:12px;border:1px solid #cbd9e5;border-radius:7px;font:inherit}.full{grid-column:1/-1}.radio-row{display:flex;gap:15px;flex-wrap:wrap}.radio-row label{font-size:13px;font-weight:700}.estimate-note{font-size:12px;color:#6b7d8b;text-align:center;margin:10px 0 0}
 .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.gallery figure{margin:0;position:relative;border-radius:10px;overflow:hidden;height:170px}.gallery img{width:100%;height:100%;object-fit:cover}.gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:8px;color:#fff;font-size:12px;font-weight:800;background:linear-gradient(transparent,#000b)}
 .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.step{text-align:center}.step-num{margin:auto;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#e7f4ff;color:var(--blue);font-weight:900}.step h4{color:var(--blue);margin:10px 0 5px}.step p{font-size:12px;color:#5b7288}
 .why{background:#eff9f3;border:1px solid #d6eedf;border-radius:14px;padding:25px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.why h3{color:var(--blue);margin:5px 0}.why p{font-size:13px;margin:0}
 .cta{background:var(--blue);color:#fff;padding:38px 0}.cta-row{display:flex;align-items:center;justify-content:space-between;gap:20px}.cta h2{margin:0;font-size:30px}.cta-actions{display:flex;gap:10px;flex-wrap:wrap}
-footer{background:#061e39;color:#d8e6f2;padding:42px 0 18px}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.1fr;gap:30px}.footer-logo{width:150px;background:#fff;border-radius:6px}.footer h4{color:#fff;margin-top:0}.footer a{display:block;font-size:13px;margin:7px 0;color:#c8d8e6}.copyright{border-top:1px solid #ffffff22;margin-top:30px;padding-top:15px;font-size:12px;display:flex;justify-content:space-between;gap:15px}
-@media(max-width:950px){.links{display:none}.nav{justify-content:space-between}.hero-grid,.estimate-grid,.dual{grid-template-columns:1fr}.hero h1{font-size:42px}.hero-photo{height:350px}.cards{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}.why{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){section{padding:48px 0}.cards,.banks,.form-grid,.gallery,.why,.footer-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}.phone{display:none}.logo{width:125px}.hero-photo{height:280px}.estimate h2{font-size:34px}.copyright{display:block}}
+footer{background:#061e39;color:#d8e6f2;padding:42px 0 18px}.footer-grid{display:grid;grid-template-columns:1.15fr .9fr 1.2fr 1fr;gap:34px}.footer-brand p{margin:14px 0 0;line-height:1.55}.footer-links a{margin:8px 0}.footer-contact p{margin:8px 0;line-height:1.5}.footer-contact .contact-line{display:flex;gap:10px;align-items:flex-start}.footer-contact .contact-icon{width:20px;flex:0 0 20px;color:#7be0ad;font-weight:900}.footer-contact a{display:inline;color:#d8e6f2;margin:0;word-break:break-word}.footer-logo{width:150px;background:#fff;border-radius:6px}.footer h4{color:#fff;margin-top:0}.footer a{display:block;font-size:13px;margin:7px 0;color:#c8d8e6}.copyright{border-top:1px solid #ffffff22;margin-top:30px;padding-top:15px;font-size:12px;display:flex;justify-content:space-between;gap:15px}
+@media(max-width:950px){.links{display:none}.nav{justify-content:space-between}.nav .btn{flex:0 1 auto}.hero-grid,.estimate-grid,.dual{grid-template-columns:minmax(0,1fr)}.hero h1{font-size:42px}.hero-photo{height:350px}.cards{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}.why{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){section{padding:48px 0}.container{width:calc(100% - 28px);max-width:100%}.nav{min-height:68px;gap:10px}.logo{width:112px;max-width:34vw}.nav>.btn{padding:10px 14px;font-size:14px;border-radius:8px;white-space:nowrap}.mobile-menu{display:none}.phone{display:none}.cards,.banks,.form-grid,.gallery,.why,.footer-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.hero-grid{min-height:auto;gap:28px;padding:42px 0}.hero-grid>div{min-width:0}.hero h1{max-width:100%;word-break:normal;overflow-wrap:anywhere}.hero p{max-width:100%}.hero h1{font-size:36px;line-height:1.08;overflow-wrap:normal}.hero p{font-size:17px}.eyebrow{font-size:11px;letter-spacing:1.5px}.features{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feature{font-size:12px}.hero-actions{display:grid;grid-template-columns:1fr;gap:10px}.hero-actions .btn{width:100%}.hero-photo{height:280px}.estimate h2{font-size:34px}.estimate-card{padding:18px}.form-grid{gap:12px}.radio-row{gap:12px}.field input,.field select{font-size:16px}.copyright{display:block}.copyright span{display:block;margin-top:6px}}
 </style>
 </head>
 <body>
@@ -54,17 +54,21 @@ footer{background:#061e39;color:#d8e6f2;padding:42px 0 18px}.footer-grid{display
 
 <section id="subsidy"><div class="container dual">
 <div class="panel"><h2>PM Surya Ghar Muft Bijli Yojana</h2><div class="subsidy-big">Subsidy Up to ₹1,08,000*</div><ul class="ticks"><li>Central Financial Assistance (CFA)</li><li>Uttar Pradesh support for eligible consumers</li><li>Assistance with the subsidy application process</li></ul><p style="font-size:12px;margin-top:18px">*Subject to eligibility, applicable central/state guidelines, DISCOM approval and scheme availability.</p></div>
-<div class="panel finance" id="financing"><h2>Easy Solar Financing Through Nationalised Banks</h2><p>Ask our team about available rooftop-solar loan options and application support.</p><div class="banks"><div class="bank">SBI<small>State Bank of India</small></div><div class="bank">PNB<small>Punjab National Bank</small></div><div class="bank">BOB<small>Bank of Baroda</small></div><div class="bank">UBI<small>Union Bank of India</small></div></div><ul class="ticks"><li>Loan guidance</li><li>Simple documentation support</li><li>Nationalised-bank assistance</li></ul></div>
+<div class="panel finance" id="financing"><h2>Easy Solar Financing Through Nationalised Banks</h2><p>Ask our team about available rooftop-solar loan options and application support.</p><div class="banks"><div class="bank"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/SBI-logo.svg" alt="SBI logo"><small>State Bank of India</small></div><div class="bank"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Punjab_National_Bank_new_logo.svg" alt="PNB logo"><small>Punjab National Bank</small></div><div class="bank"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bank_of_Baroda_Logo_since_Dec_19.png" alt="Bank of Baroda logo"><small>Bank of Baroda</small></div><div class="bank"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Union_Bank_of_India_Logo.svg" alt="Union Bank of India logo"><small>Union Bank of India</small></div></div><ul class="ticks"><li>Loan guidance</li><li>Simple documentation support</li><li>Nationalised-bank assistance</li></ul></div>
 </div></section>
 
 <section class="estimate" id="estimate"><div class="container estimate-grid"><div><div class="eyebrow" style="color:#8cf0bd">TAKE THE FIRST STEP TODAY</div><h2>Get Your Free Solar Estimate</h2><p>Find out how much you can save with rooftop solar. Share your details and our team will prepare a customized solar recommendation and quotation for you.</p><p>✓ No obligation &nbsp; ✓ Customized quotation &nbsp; ✓ Subsidy guidance &nbsp; ✓ Loan assistance</p></div>
-<div class="estimate-card"><form id="estimateForm"><div class="form-grid">
-<div class="field"><label>Your Name *</label><input id="name" required placeholder="Enter your name"></div>
-<div class="field"><label>Mobile / WhatsApp Number *</label><input id="mobile" required inputmode="numeric" placeholder="Enter mobile number"></div>
-<div class="field"><label>City / Village *</label><input id="location" required placeholder="Enter city or village"></div>
-<div class="field"><label>Monthly Electricity Bill *</label><select id="bill" required><option value="">Select monthly bill range</option><option>Below ₹1,000</option><option>₹1,000–₹2,500</option><option>₹2,500–₹5,000</option><option>₹5,000–₹10,000</option><option>Above ₹10,000</option></select></div>
+<div class="estimate-card"><form id="estimateForm" action="https://formsubmit.co/ajax/kashisolar.renewables@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New Solar Lead - Kashi Solar & Renewables">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_url" value="https://kashisolarandrenewables.in/"><div class="form-grid">
+<div class="field"><label>Your Name *</label><input id="name" name="name" required placeholder="Enter your name"></div>
+<div class="field"><label>Mobile / WhatsApp Number *</label><input id="mobile" name="mobile" required inputmode="numeric" placeholder="Enter mobile number"></div>
+<div class="field"><label>City / Village *</label><input id="location" name="location" required placeholder="Enter city or village"></div>
+<div class="field"><label>Monthly Electricity Bill *</label><select id="bill" name="monthly_bill" required><option value="">Select monthly bill range</option><option>Below ₹1,000</option><option>₹1,000–₹2,500</option><option>₹2,500–₹5,000</option><option>₹5,000–₹10,000</option><option>Above ₹10,000</option></select></div>
 <div class="field full"><label>Property Type *</label><div class="radio-row"><label><input type="radio" name="property" value="Residential" checked> Residential</label><label><input type="radio" name="property" value="Commercial"> Commercial</label><label><input type="radio" name="property" value="Industrial"> Industrial</label></div></div>
-<div class="field full"><label>Interested System Size</label><div class="radio-row"><label><input type="radio" name="size" value="3–10 kW" checked> 3–10 kW</label><label><input type="radio" name="size" value="Not Sure"> Not Sure</label></div></div>
+<div class="field full"><label>Interested System Size</label><div class="radio-row"><label><input type="radio" name="system_size" value="3–10 kW" checked> 3–10 kW</label><label><input type="radio" name="system_size" value="Not Sure"> Not Sure</label></div></div>
 <div class="full"><button class="btn btn-green" style="width:100%;border:0" type="submit">Get Free Estimate on WhatsApp →</button></div>
 </div><div class="estimate-note">Your details are used only to prepare your solar estimate.</div></form></div></div></section>
 
@@ -103,24 +107,37 @@ footer{background:#061e39;color:#d8e6f2;padding:42px 0 18px}.footer-grid{display
 </main>
 
 <footer id="contact"><div class="container footer-grid">
-<div><img class="footer-logo" src="images/ksr-logo.jpg" alt="KSR"><p>Clean Energy | A Better Tomorrow</p></div>
-<div><h4>Quick Links</h4><a href="#home">Home</a><a href="#about">About Us</a><a href="#solutions">Our Solutions</a><a href="#projects">Projects</a><a href="#subsidy">Subsidy</a><a href="#financing">Financing</a><a href="#faq">FAQ</a></div>
-<div><h4>Contact Us</h4><a href="tel:+917266016888">7266016888</a><a href="tel:+918004405623">8004405623</a><a href="mailto:kashisolar.renewables@gmail.com">kashisolar.renewables@gmail.com</a><p>A-9/9 Jail Garden Road,<br>Raebareli, Uttar Pradesh</p></div>
-<div><h4>Our Service Areas</h4><p>Raebareli, Lucknow, Kanpur, Unnao, Fatehpur, Amethi, Pratapgarh, Sultanpur, Barabanki, Sitapur and nearby areas.</p></div>
-</div><div class="container copyright"><span>© 2026 Kashi Solar & Renewables. All Rights Reserved.</span><span>Privacy Policy &nbsp; | &nbsp; Terms & Conditions &nbsp; | &nbsp; Disclaimer</span></div></footer>
+<div class="footer-brand"><img class="footer-logo" src="images/ksr-logo.jpg" alt="Kashi Solar & Renewables"><p>Clean Energy | A Better Tomorrow</p><p>Reliable rooftop solar solutions for homes, businesses and industries across Uttar Pradesh.</p></div>
+<div class="footer-links"><h4>Quick Links</h4><a href="#home">Home</a><a href="#about">About Us</a><a href="#solutions">Our Solutions</a><a href="#projects">Projects</a><a href="#subsidy">Subsidy</a><a href="#financing">Financing</a><a href="#faq">FAQ</a><a href="#contact">Contact Us</a></div>
+<div class="footer-contact"><h4>Contact Us</h4><p class="contact-line"><span class="contact-icon">☎</span><span><a href="tel:+917266016888">7266016888</a><br><a href="tel:+918004405623">8004405623</a></span></p><p class="contact-line"><span class="contact-icon">✉</span><span><a href="mailto:kashisolar.renewables@gmail.com">kashisolar.renewables@gmail.com</a></span></p><p class="contact-line"><span class="contact-icon">⌖</span><span>A-9/9 Jail Garden Road,<br>Raebareli, Uttar Pradesh - 229001</span></p></div>
+<div><h4>Our Service Areas</h4><p>Raebareli, Lucknow,<br>Kanpur, Unnao, Fatehpur,<br>Amethi, Sultanpur,<br>Pratapgarh, Barabanki,<br>Sitapur and nearby areas.</p></div>
+</div><div class="container copyright"><span>© 2026 Kashi Solar & Renewables. All Rights Reserved.</span><span>Privacy Policy &nbsp;|&nbsp; Terms & Conditions &nbsp;|&nbsp; Disclaimer</span></div></footer>
 
 <script>
-document.getElementById('estimateForm').addEventListener('submit',function(e){
- e.preventDefault();
- const name=document.getElementById('name').value.trim();
- const mobile=document.getElementById('mobile').value.trim();
- const location=document.getElementById('location').value.trim();
- const bill=document.getElementById('bill').value;
- const property=document.querySelector('input[name="property"]:checked').value;
- const size=document.querySelector('input[name="size"]:checked').value;
- const msg=`Hello Kashi Solar & Renewables,%0A%0AI want a free solar estimate.%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(mobile)}%0ALocation: ${encodeURIComponent(location)}%0AMonthly Bill: ${encodeURIComponent(bill)}%0AProperty: ${encodeURIComponent(property)}%0AInterested System: ${encodeURIComponent(size)}%0A%0APlease contact me with a customized solar recommendation and quotation.`;
- window.open('https://wa.me/917266016888?text='+msg,'_blank');
+const form=document.getElementById('estimateForm');
+form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=form.querySelector('button[type="submit"]');
+  const data=new FormData(form);
+  const lead={name:data.get('name'),mobile:data.get('mobile'),location:data.get('location'),monthly_bill:data.get('monthly_bill'),property:data.get('property'),system_size:data.get('system_size'),submitted_at:new Date().toISOString()};
+  localStorage.setItem('ksr_last_lead',JSON.stringify(lead));
+  btn.disabled=true; btn.textContent='Saving your enquiry…';
+  try{
+    const response=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:data});
+    const result=await response.json().catch(()=>({success:true}));
+    if(!response.ok || result.success===false) throw new Error('Lead email failed');
+  }catch(err){
+    console.warn('Lead email service unavailable; local backup saved.',err);
+  }
+  const message=`Hello Kashi Solar & Renewables, I want a free solar estimate.
+
+Name: ${lead.name}
+Mobile: ${lead.mobile}
+City/Village: ${lead.location}
+Monthly Bill: ${lead.monthly_bill}
+Property: ${lead.property}
+Interested System: ${lead.system_size}`;
+  window.location.href='https://wa.me/917266016888?text='+encodeURIComponent(message);
 });
-</script>
-</body>
+</script></body>
 </html>
