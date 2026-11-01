@@ -194,6 +194,19 @@ exports.handler = async function (event) {
     return json(405, { code: "METHOD_NOT_ALLOWED", message: "Use POST for a rooftop assessment." }, origin);
   }
 
+  const expectedToken = process.env.ASSESSMENT_ACCESS_TOKEN;
+  if (!expectedToken) {
+    return json(503, { code: "ASSESSMENT_AUTH_NOT_CONFIGURED", message: "The internal assessment tool is not configured yet. Please contact the website administrator." }, origin);
+  }
+  const authorization = event.headers && (event.headers.authorization || event.headers.Authorization);
+  const suppliedToken = authorization && authorization.startsWith("Bearer ") ? authorization.slice(7) : "";
+  const expectedBuffer = Buffer.from(expectedToken);
+  const suppliedBuffer = Buffer.from(suppliedToken);
+  const tokenMatches = suppliedBuffer.length === expectedBuffer.length && require("node:crypto").timingSafeEqual(suppliedBuffer, expectedBuffer);
+  if (!tokenMatches) {
+    return json(401, { code: "ASSESSMENT_AUTH_REQUIRED", message: "Team access code is missing or incorrect." }, origin);
+  }
+
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
   if (!apiKey) {
     return json(503, { code: "SOLAR_SETUP_REQUIRED", message: "The Google Solar connection is not configured yet. Please contact our team for a manual roof assessment." }, origin);
