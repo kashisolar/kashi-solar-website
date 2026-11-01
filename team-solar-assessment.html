@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#06284b">
+<title>Team Rooftop Assessment | Kashi Solar</title>
+<style>
+:root{--navy:#06284b;--blue:#0b67a8;--green:#09a96b;--ink:#17354d;--muted:#61798b;--line:#dce8ef}
+*{box-sizing:border-box}body{margin:0;background:#f2f7fa;color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif;line-height:1.5}
+header{background:var(--navy);color:#fff;padding:18px 0}.wrap{width:min(1000px,calc(100% - 32px));margin:auto}.brand{font-weight:900;letter-spacing:.02em}.brand small{display:block;color:#95eabc;font-size:10px;letter-spacing:.13em;margin-top:3px}
+main{padding:38px 0 60px}.intro h1{font-size:clamp(27px,4vw,39px);letter-spacing:-.04em;color:var(--navy);margin:8px 0}.intro p{color:var(--muted);max-width:720px;margin:0 0 25px}.eyebrow{font-size:10px;font-weight:900;letter-spacing:.16em;color:var(--green);text-transform:uppercase}
+.layout{display:grid;grid-template-columns:1fr .85fr;gap:18px;align-items:start}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 12px 32px rgba(5,44,76,.06)}.card h2{font-size:18px;color:var(--navy);margin:0 0 16px}.field{margin-bottom:14px}.field label{display:block;font-size:11px;font-weight:850;color:#39546b;margin-bottom:6px}.field input{width:100%;border:1px solid #d4e1e9;border-radius:11px;padding:13px 12px;font:inherit;color:var(--ink);outline:none}.field input:focus{border-color:var(--green);box-shadow:0 0 0 4px #09a96b1a}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;border-radius:999px;padding:13px 18px;font-weight:900;cursor:pointer}.primary{background:linear-gradient(120deg,#10b873,#07875c);color:#fff}.secondary{background:#eef5f9;color:var(--navy);border:1px solid var(--line)}.btn:disabled{opacity:.6;cursor:wait}.full{width:100%}.note{color:#80919c;font-size:10px;line-height:1.6;margin:13px 0 0}.status{font-size:12px;color:#5e7688;min-height:20px;margin:12px 0 0}.result{margin-top:18px}.result[hidden]{display:none}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{background:#f5fbf7;border:1px solid #dceee3;border-radius:13px;padding:13px}.metric b{display:block;font-size:21px;color:#087b51}.metric span{font-size:10px;color:var(--muted)}.meta{font-size:11px;color:var(--muted);margin:13px 0}.notice{background:#fff8e9;border:1px solid #efdfba;border-radius:13px;padding:13px;font-size:11px;color:#765821;margin-top:13px}.error{background:#fff4f1;border:1px solid #efd5cb;border-radius:13px;padding:13px;font-size:12px;color:#914b35}.actions{display:grid;gap:8px;margin-top:15px}.google-credit{font-size:9px;color:#728697;text-align:right;margin-top:9px}.staff{font-size:10px;color:#8ca0ae;margin-top:18px}@media(max-width:760px){.layout{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}main{padding-top:27px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">KASHI SOLAR & RENEWABLES<small>INTERNAL TEAM TOOL • NOT FOR CUSTOMERS</small></div></div></header>
+<main class="wrap">
+ <div class="intro"><div class="eyebrow">Post-enquiry workflow</div><h1>Team Rooftop Solar Assessment</h1><p>Use this page after a customer has shown interest and shared their property location. Enter the lead details and exact address to retrieve Google's available rooftop solar model data before arranging the physical site assessment.</p></div>
+ <div class="layout">
+  <section class="card">
+   <h2>1. Lead & property details</h2>
+   <form id="assessmentForm">
+    <div class="grid2">
+     <div class="field"><label for="leadRef">CRM Lead ID / Reference</label><input id="leadRef" placeholder="e.g. KS-L0001"></div>
+     <div class="field"><label for="customerName">Customer name</label><input id="customerName" autocomplete="name" placeholder="Customer name"></div>
+    </div>
+    <div class="grid2">
+     <div class="field"><label for="customerMobile">Customer mobile / WhatsApp</label><input id="customerMobile" inputmode="numeric" maxlength="10" placeholder="10-digit number"></div>
+     <div class="field"><label for="propertyType">Property type</label><input id="propertyType" placeholder="Home / Shop / Factory"></div>
+    </div>
+    <div class="field"><label for="propertyAddress">Full property address *</label><input id="propertyAddress" required autocomplete="street-address" placeholder="House / street, village or locality, district, PIN, Uttar Pradesh"></div>
+    <div class="field"><label for="accessCode">Team access code *</label><input id="accessCode" type="password" required autocomplete="current-password" placeholder="Enter the private access code"></div>
+    <button class="btn primary full" id="runAssessment" type="submit">Run Google Solar assessment →</button>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <p class="note">Only use this tool for a customer who has requested a solar consultation and provided the property location for assessment. The address is sent to Google Geocoding and Solar APIs. Do not enter bank details, ID numbers or other sensitive personal data.</p>
+   </form>
+  </section>
+  <aside class="card">
+   <h2>2. Assessment result</h2>
+   <div id="emptyState" class="note">A successful Google lookup will show the modelled panel capacity, panel count, panel-array area and solar indicators here. Some buildings may not have available imagery.</div>
+   <div id="result" class="result" hidden></div>
+   <div class="notice">Important: Google data is only a preliminary model. Our team must verify actual roof access, shade, roof structure, electrical load, DISCOM requirements and site conditions before recommending a system or issuing a quotation.</div>
+  </aside>
+ </div>
+ <p class="staff">Authorised Kashi Solar & Renewables staff only. Access code is required for every assessment and is not saved by this page.</p>
+</main>
+<script>
+const endpoint="/.netlify/functions/solar-insights";
+const form=document.getElementById("assessmentForm");
+const statusNode=document.getElementById("status");
+const resultNode=document.getElementById("result");
+const emptyState=document.getElementById("emptyState");
+let currentResult=null;
+function addMetric(parent,value,label){const node=document.createElement("div");node.className="metric";const b=document.createElement("b");b.textContent=value;const s=document.createElement("span");s.textContent=label;node.append(b,s);parent.append(node);}
+function addButton(parent,label,href,extraClass){const a=document.createElement("a");a.className="btn "+extraClass;a.textContent=label;a.href=href;if(href.startsWith("https://wa.me/")){a.target="_blank";a.rel="noopener";}parent.append(a);}
+form.addEventListener("submit",async event=>{
+ event.preventDefault();resultNode.hidden=false;emptyState.hidden=true;resultNode.innerHTML='<p class="status">Looking up the property and retrieving available Google Solar data…</p>';
+ const button=document.getElementById("runAssessment");button.disabled=true;statusNode.textContent="Assessment in progress.";
+ const address=document.getElementById("propertyAddress").value.trim();
+ const code=document.getElementById("accessCode").value;
+ try{
+  if(address.length<4)throw new Error("Please enter a full property address.");
+  const response=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+code},body:JSON.stringify({address})});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(data.message||"Assessment failed. Please try again.");
+  currentResult=data;resultNode.innerHTML="";
+  const heading=document.createElement("h2");heading.textContent="Google rooftop building insights";resultNode.append(heading);
+  const addressNode=document.createElement("p");addressNode.className="meta";addressNode.textContent=(document.getElementById("leadRef").value.trim()?document.getElementById("leadRef").value.trim()+" • ":"")+(data.formattedAddress||address);resultNode.append(addressNode);
+  const metrics=document.createElement("div");metrics.className="metrics";
+  const p=data.solarPotential||{};
+  addMetric(metrics,Number(p.maxSystemCapacityKw||0).toFixed(1)+" kW","Modelled maximum panel capacity");
+  addMetric(metrics,Number(p.maxArrayPanelsCount||0).toLocaleString("en-IN"),"Potential panel count");
+  addMetric(metrics,Number(p.maxArrayAreaM2||0).toFixed(0)+" m²","Potential panel-array area");
+  addMetric(metrics,Number(p.maxSunshineHoursPerYear||0).toLocaleString("en-IN"),"Peak annual sunshine hours");
+  if(p.estimatedAnnualEnergyDcKwh) addMetric(metrics,Math.round(p.estimatedAnnualEnergyDcKwh).toLocaleString("en-IN")+" kWh","Modelled annual DC solar energy");
+  resultNode.append(metrics);
+  const detail=document.createElement("p");detail.className="meta";detail.textContent="Imagery quality: "+(data.imageryQuality||"Not specified")+" • Imagery date: "+(data.imageryDate||"Not provided");resultNode.append(detail);
+  const caution=document.createElement("div");caution.className="notice";caution.textContent="Preliminary model output only. Do not present these values as a final design, AC generation estimate, guaranteed savings or quotation. Physical site verification is required.";resultNode.append(caution);
+  const actions=document.createElement("div");actions.className="actions";
+  const name=document.getElementById("customerName").value.trim();
+  const mobile=document.getElementById("customerMobile").value.trim();
+  const lead=document.getElementById("leadRef").value.trim();
+  const property=document.getElementById("propertyType").value.trim();
+  const summary="Kashi Solar internal rooftop assessment\nLead: "+(lead||"Not entered")+"\nCustomer: "+(name||"Not entered")+"\nProperty: "+(property||"Not entered")+"\nAddress: "+(data.formattedAddress||address)+"\nModelled max capacity: "+Number(p.maxSystemCapacityKw||0).toFixed(1)+" kW\nPotential panels: "+Number(p.maxArrayPanelsCount||0)+"\nPotential panel-array area: "+Number(p.maxArrayAreaM2||0).toFixed(0)+" m2\nPeak annual sunshine hours: "+Number(p.maxSunshineHoursPerYear||0)+"\nImagery quality/date: "+(data.imageryQuality||"Not specified")+" / "+(data.imageryDate||"Not provided")+"\nPreliminary only — physical site survey required.";
+  const copy=document.createElement("button");copy.type="button";copy.className="btn secondary";copy.textContent="Copy assessment summary";copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(summary);statusNode.textContent="Assessment summary copied.";}catch(err){statusNode.textContent="Copy not available in this browser. Select and copy the summary manually.";}});actions.append(copy);
+  if(/^[6-9][0-9]{9}$/.test(mobile)){const customerMessage="Hello "+(name||"")+", Kashi Solar & Renewables has reviewed the available Google rooftop data for your property. Preliminary modelled maximum panel capacity: "+Number(p.maxSystemCapacityKw||0).toFixed(1)+" kW; potential panels: "+Number(p.maxArrayPanelsCount||0)+". This is not the final system design or quotation. Our team will verify the property through a site assessment and share a customised recommendation.";addButton(actions,"Open WhatsApp message to customer","https://wa.me/91"+mobile+"?text="+encodeURIComponent(customerMessage),"primary");}
+  resultNode.append(actions);
+  const credit=document.createElement("p");credit.className="google-credit";credit.textContent="Source: Includes solar data from Google • Address lookup: Google Maps";resultNode.append(credit);
+  statusNode.textContent="Assessment retrieved. Review the limitations before sharing any result.";
+ }catch(error){resultNode.innerHTML="";const err=document.createElement("div");err.className="error";err.textContent=error.message;resultNode.append(err);statusNode.textContent="No completed assessment.";emptyState.hidden=true;}
+ finally{button.disabled=false;}
+});
+</script>
+</body>
+</html>
