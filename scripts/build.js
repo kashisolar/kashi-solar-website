@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const root = process.cwd();
 const output = path.join(root, "dist");
-const requiredFiles = ["index.html", "privacy-policy.html"];
+const requiredFiles = ["index.html", "privacy-policy.html", "team-solar-assessment.html"];
 
 fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output, { recursive: true });
