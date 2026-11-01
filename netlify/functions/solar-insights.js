@@ -18,7 +18,7 @@ function json(statusCode, body, origin) {
     "Cache-Control": "no-store",
     "X-Content-Type-Options": "nosniff",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type"
+    "Access-Control-Allow-Headers": "Content-Type, Authorization"
   };
   if (origin) headers["Access-Control-Allow-Origin"] = origin;
   return { statusCode, headers, body: JSON.stringify(body) };
