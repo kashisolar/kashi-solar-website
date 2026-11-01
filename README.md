@@ -24,7 +24,7 @@ The build creates `dist/` with the static website. Netlify Functions are deploye
 
 ## Netlify deployment
 
-1. Connect this repository to the Netlify site used for the private preview. For a preview-only site, set its production branch to `redesign/vibrant-3d-experience`; do not connect the business domain to this preview site.
+1. Connect this repository to the existing Netlify preview site. For a preview-only site, set its production branch to `redesign/vibrant-3d-experience`; do not connect the business domain to this preview site.
 2. Use the settings in `netlify.toml`: build command `npm run build`, publish directory `dist`, functions directory `netlify/functions`.
 3. In Netlify Site configuration → Environment variables, add `GOOGLE_MAPS_API_KEY` as a **secret**. Never add the key to HTML, JavaScript, GitHub commits or a public file.
 4. Redeploy the site after setting the environment variable.
