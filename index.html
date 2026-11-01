@@ -52,7 +52,7 @@ if(!prefersReduced&&"IntersectionObserver" in window){
 document.querySelectorAll("[data-property]").forEach(link=>link.addEventListener("click",()=>{const value=link.dataset.property;const input=document.querySelector('input[name="property"][value="'+value+'"]');if(input){input.checked=true;}}));
 </script>
 <script>
-const SOLAR_API_ENDPOINT="https://dynamic-melba-ca4f75.netlify.app/.netlify/functions/solar-insights";
+const SOLAR_API_ENDPOINT="/.netlify/functions/solar-insights";
 const solarForm=document.getElementById("solarPotentialForm");
 if(solarForm){
  const addressInput=document.getElementById("solarAddress"),statusNode=document.getElementById("solarLocationStatus"),useLocationButton=document.getElementById("useCurrentLocation"),resultNode=document.getElementById("solarResult");
