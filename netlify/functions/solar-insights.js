@@ -27,9 +27,11 @@ function json(statusCode, body, origin) {
 function isAllowedOrigin(origin) {
   if (!origin) return true;
   if (ALLOWED_ORIGINS.has(origin)) return true;
+  const deployUrls = [process.env.URL, process.env.DEPLOY_PRIME_URL, process.env.DEPLOY_URL].filter(Boolean);
+  if (deployUrls.includes(origin)) return true;
   try {
     const host = new URL(origin).hostname;
-    return /^deploy-preview-\d+--dynamic-melba-ca4f75\.netlify\.app$/.test(host);
+    return /^(?:deploy-preview-\\d+|[a-z0-9-]+)--dynamic-melba-ca4f75\\.netlify\\.app$/.test(host);
   } catch {
     return false;
   }
